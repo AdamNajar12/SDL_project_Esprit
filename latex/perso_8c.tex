@@ -1,0 +1,488 @@
+\hypertarget{perso_8c}{}\section{perso.\+c File Reference}
+\label{perso_8c}\index{perso.\+c@{perso.\+c}}
+
+
+Test Program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+ttf.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}perso.\+h\char`\"{}}\\*
+Include dependency graph for perso.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{perso_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{perso_8c_a21661aa89318d131d372cdacb5ef82c3}{init\+\_\+perso} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers})
+\begin{DoxyCompactList}\small\item\em To initialize the \hyperlink{perso_8c}{perso.\+c}. \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_ab3df315948613e2596ba989c3901ce00}{animate\+Entity} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers})
+\begin{DoxyCompactList}\small\item\em to animate the personnage pers . \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_ac29231e5ad237f14aa979bd358003dec}{deplacer\+\_\+perso} (int direction, \hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers})
+\begin{DoxyCompactList}\small\item\em to move the personnage pers . \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_aca4de1454b86bed715fb9f30706cd979}{move\+Perso} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers}, Uint32 dt)
+\begin{DoxyCompactList}\small\item\em to accelerate the personnage pers . \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_ae3c5c8505cfb2638fa312c5cb8e20aa5}{blit\+Entity} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers}, S\+D\+L\+\_\+\+Surface $\ast$ecran)
+\begin{DoxyCompactList}\small\item\em to blit the surface of personnage pers . \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_a47ed0411b9adbc7543d3e80815cb3401}{afficherperso} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers}, S\+D\+L\+\_\+\+Surface $\ast$ecran)
+\begin{DoxyCompactList}\small\item\em to show the personnage pers . \end{DoxyCompactList}\item 
+void \hyperlink{perso_8c_aa512e7feb8c56d184403ca02f0c094a7}{saut} (\hyperlink{structpersonnage}{personnage} $\ast$\hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers}, int dt, int posint)
+\begin{DoxyCompactList}\small\item\em jump the personnage pers . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test Program. 
+
+\begin{DoxyAuthor}{Author}
+dark evil Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+6 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Apr 24, 2021
+\end{DoxyDate}
+Test program for perso saut $\ast$
+
+\subsection{Function Documentation}
+\index{perso.\+c@{perso.\+c}!afficherperso@{afficherperso}}
+\index{afficherperso@{afficherperso}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{afficherperso(personnage $\ast$pers, S\+D\+L\+\_\+\+Surface $\ast$ecran)}{afficherperso(personnage *pers, SDL_Surface *ecran)}}]{\setlength{\rightskip}{0pt plus 5cm}void afficherperso (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers, }
+\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{ecran}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_a47ed0411b9adbc7543d3e80815cb3401}{}\label{perso_8c_a47ed0411b9adbc7543d3e80815cb3401}
+
+
+to show the personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file perso.\+c.
+
+
+
+References personnage\+::score, and personnage\+::vie.
+
+
+\begin{DoxyCode}
+175 \{
+176 pers->\hyperlink{structpersonnage_a3a476ed3aa74ef4eb7ea482739443401}{vie}=IMG\_Load(\textcolor{stringliteral}{"v1.png"});
+177 SDL\_Rect vieposition;
+178 vieposition.x=0;
+179 vieposition.y=0;
+180 SDL\_BlitSurface(pers->\hyperlink{structpersonnage_a3a476ed3aa74ef4eb7ea482739443401}{vie},NULL,ecran,&vieposition);
+181 SDL\_Flip(ecran);
+182 
+183 TTF\_Font *fontTest;
+184 fontTest=TTF\_OpenFont(\textcolor{stringliteral}{"arial.ttf"},22);
+185 SDL\_Color fontColor=\{0,0,255\};
+186 
+187 \textcolor{comment}{//police1}
+188 pers->\hyperlink{structpersonnage_ad1416e47a9921f214b01e8435d2ea476}{score}=TTF\_RenderText\_Solid(fontTest,\textcolor{stringliteral}{"Score :"},fontColor);
+189 SDL\_Rect texte1Pos;
+190 texte1Pos.x=0;
+191 texte1Pos.y=70;
+192 SDL\_BlitSurface(pers->\hyperlink{structpersonnage_ad1416e47a9921f214b01e8435d2ea476}{score},NULL,ecran,&texte1Pos);
+193 SDL\_Flip(ecran);
+194 
+195 
+196 
+197 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{perso_8c_a47ed0411b9adbc7543d3e80815cb3401_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!animate\+Entity@{animate\+Entity}}
+\index{animate\+Entity@{animate\+Entity}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{animate\+Entity(personnage $\ast$pers)}{animateEntity(personnage *pers)}}]{\setlength{\rightskip}{0pt plus 5cm}void animate\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_ab3df315948613e2596ba989c3901ce00}{}\label{perso_8c_ab3df315948613e2596ba989c3901ce00}
+
+
+to animate the personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrice} & \\
+\hline
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file perso.\+c.
+
+
+
+References personnage\+::num.
+
+
+\begin{DoxyCode}
+94 \{
+95 
+96 \textcolor{keywordflow}{if}(pers->\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}==3)
+97 pers->\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}=0;
+98 \textcolor{keywordflow}{else} pers->\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}++;
+99 
+100 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{perso_8c_ab3df315948613e2596ba989c3901ce00_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!blit\+Entity@{blit\+Entity}}
+\index{blit\+Entity@{blit\+Entity}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{blit\+Entity(personnage $\ast$pers, S\+D\+L\+\_\+\+Surface $\ast$ecran)}{blitEntity(personnage *pers, SDL_Surface *ecran)}}]{\setlength{\rightskip}{0pt plus 5cm}void blit\+Entity (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers, }
+\item[{S\+D\+L\+\_\+\+Surface $\ast$}]{ecran}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_ae3c5c8505cfb2638fa312c5cb8e20aa5}{}\label{perso_8c_ae3c5c8505cfb2638fa312c5cb8e20aa5}
+
+
+to blit the surface of personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file perso.\+c.
+
+
+
+References personnage\+::d, personnage\+::mat, personnage\+::num, and personnage\+::\+Positionmat.
+
+
+\begin{DoxyCode}
+158 \{
+159 
+160 SDL\_BlitSurface(pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[pers->\hyperlink{structpersonnage_ad3316ca5e21971af05da3b10b0d18fb3}{d}][pers->\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}],NULL,ecran,&pers->
+      \hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat});
+161 SDL\_Flip(ecran);
+162 
+163 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{perso_8c_ae3c5c8505cfb2638fa312c5cb8e20aa5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!deplacer\+\_\+perso@{deplacer\+\_\+perso}}
+\index{deplacer\+\_\+perso@{deplacer\+\_\+perso}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{deplacer\+\_\+perso(int direction, personnage $\ast$pers)}{deplacer_perso(int direction, personnage *pers)}}]{\setlength{\rightskip}{0pt plus 5cm}void deplacer\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{int}]{direction, }
+\item[{{\bf personnage} $\ast$}]{pers}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_ac29231e5ad237f14aa979bd358003dec}{}\label{perso_8c_ac29231e5ad237f14aa979bd358003dec}
+
+
+to move the personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file perso.\+c.
+
+
+
+References personnage\+::\+Positionmat.
+
+
+\begin{DoxyCode}
+112                                                    \{
+113     
+114     \textcolor{keywordflow}{if}(direction==0)\{
+115               
+116               pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.x+=25; 
+117                    
+118 \} 
+119      \textcolor{keywordflow}{else} 
+120          \textcolor{keywordflow}{if}(direction==1)\{ 
+121                
+122               pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.x-=25; \}
+123               
+124 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(direction==2)
+125 \{
+126 
+127 pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.x+=2;
+128 
+129 \}
+130     
+131 
+132 
+133 
+134 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{perso_8c_ac29231e5ad237f14aa979bd358003dec_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!init\+\_\+perso@{init\+\_\+perso}}
+\index{init\+\_\+perso@{init\+\_\+perso}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{init\+\_\+perso(personnage $\ast$pers)}{init_perso(personnage *pers)}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+perso (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_a21661aa89318d131d372cdacb5ef82c3}{}\label{perso_8c_a21661aa89318d131d372cdacb5ef82c3}
+
+
+To initialize the \hyperlink{perso_8c}{perso.\+c}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+{\em url} & the url of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file perso.\+c.
+
+
+
+References personnage\+::acceleration, personnage\+::d, personnage\+::mat, personnage\+::nscore, personnage\+::num, personnage\+::nvie, personnage\+::\+Positionmat, personnage\+::up, and personnage\+::vitesse.
+
+
+\begin{DoxyCode}
+39                                  \{
+40     pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][0]=IMG\_Load(\textcolor{stringliteral}{"p.png"}); 
+41         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][1]=IMG\_Load(\textcolor{stringliteral}{"p1.png"});
+42         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][2]=IMG\_Load(\textcolor{stringliteral}{"p2.png"});
+43         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][3]=IMG\_Load(\textcolor{stringliteral}{"p3.png"});  
+44         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[1][0]=IMG\_Load(\textcolor{stringliteral}{"p4.png"});
+45         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[1][1]=IMG\_Load(\textcolor{stringliteral}{"p5.png"});
+46         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[1][2]=IMG\_Load(\textcolor{stringliteral}{"p6.png"});
+47         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[1][3]=IMG\_Load(\textcolor{stringliteral}{"p7.png"});
+48         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[2][0]=IMG\_Load(\textcolor{stringliteral}{"p10.png"});  
+49         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[2][1]=IMG\_Load(\textcolor{stringliteral}{"p10.png"});
+50         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[2][2]=IMG\_Load(\textcolor{stringliteral}{"p10.png"});
+51         pers->\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[2][3]=IMG\_Load(\textcolor{stringliteral}{"p10.png"});
+52 
+53 pers->\hyperlink{structpersonnage_ad3316ca5e21971af05da3b10b0d18fb3}{d}=0;
+54 pers->\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}=0;
+55 pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.x=0;
+56 pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.y=250;
+57 pers->\hyperlink{structpersonnage_a5f78a81264a0d479a023826b20b86173}{nvie}=3; 
+58 pers->\hyperlink{structpersonnage_a6c5c952d4dc96ed7f6be22480cb5a4d0}{nscore}=0; 
+59 
+60 pers->\hyperlink{structpersonnage_a9833848acdb28a307902c8e1682213d9}{vitesse}=5;
+61 pers->\hyperlink{structpersonnage_aa3dc1bee3cdaa742eac0d46f56ac8908}{acceleration}=0;
+62 pers->\hyperlink{structpersonnage_ad781b14c9d0a4f927e6471b9cf1234df}{up}=0;
+63 
+64 
+65     
+66 
+67 
+68 
+69 
+70 
+71 
+72 
+73 
+74 
+75 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{perso_8c_a21661aa89318d131d372cdacb5ef82c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!move\+Perso@{move\+Perso}}
+\index{move\+Perso@{move\+Perso}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{move\+Perso(personnage $\ast$pers, Uint32 dt)}{movePerso(personnage *pers, Uint32 dt)}}]{\setlength{\rightskip}{0pt plus 5cm}void move\+Perso (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers, }
+\item[{Uint32}]{dt}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_aca4de1454b86bed715fb9f30706cd979}{}\label{perso_8c_aca4de1454b86bed715fb9f30706cd979}
+
+
+to accelerate the personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file perso.\+c.
+
+
+
+References personnage\+::acceleration, and personnage\+::vitesse.
+
+
+\begin{DoxyCode}
+144 \{
+145 \textcolor{keywordtype}{double} dx;
+146 dx=pers->\hyperlink{structpersonnage_a9833848acdb28a307902c8e1682213d9}{vitesse}*dt+0.5*pers->\hyperlink{structpersonnage_aa3dc1bee3cdaa742eac0d46f56ac8908}{acceleration}*dt*dt;
+147 
+148 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{perso_8c_aca4de1454b86bed715fb9f30706cd979_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{perso.\+c@{perso.\+c}!saut@{saut}}
+\index{saut@{saut}!perso.\+c@{perso.\+c}}
+\subsubsection[{\texorpdfstring{saut(personnage $\ast$pers, int dt, int posint)}{saut(personnage *pers, int dt, int posint)}}]{\setlength{\rightskip}{0pt plus 5cm}void saut (
+\begin{DoxyParamCaption}
+\item[{{\bf personnage} $\ast$}]{pers, }
+\item[{int}]{dt, }
+\item[{int}]{posint}
+\end{DoxyParamCaption}
+)}\hypertarget{perso_8c_aa512e7feb8c56d184403ca02f0c094a7}{}\label{perso_8c_aa512e7feb8c56d184403ca02f0c094a7}
+
+
+jump the personnage pers . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pers} & the personnage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file perso.\+c.
+
+
+
+References personnage\+::acceleration, personnage\+::\+Positionmat, personnage\+::up, and personnage\+::vitesse.
+
+
+\begin{DoxyCode}
+207 \{
+208 
+209 \textcolor{keywordflow}{if}(pers->\hyperlink{structpersonnage_ad781b14c9d0a4f927e6471b9cf1234df}{up}==1)
+210 \{
+211 pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.y-=80;
+212 
+213 
+214 
+215 \}
+216 posint=pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.y-=80;
+217 
+218 
+219 \textcolor{keywordtype}{double} dx;
+220 \textcolor{keywordflow}{if}(pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.y==posint)
+221 \{
+222 
+223 
+224 pers->\hyperlink{structpersonnage_a8216e2ba9fa8840fd13e47f40ccf356d}{Positionmat}.y+=80;
+225 
+226 dx=0.5*pers->\hyperlink{structpersonnage_aa3dc1bee3cdaa742eac0d46f56ac8908}{acceleration} + 5*dt;
+227 pers->\hyperlink{structpersonnage_a9833848acdb28a307902c8e1682213d9}{vitesse}-=dx;
+228 \}
+229 
+230 
+231 
+232 
+233 \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{perso_8c_aa512e7feb8c56d184403ca02f0c094a7_icgraph}
+\end{center}
+\end{figure}
+
+

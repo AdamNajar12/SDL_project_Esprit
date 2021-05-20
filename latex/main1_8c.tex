@@ -1,0 +1,190 @@
+\hypertarget{main1_8c}{}\section{main1.\+c File Reference}
+\label{main1_8c}\index{main1.\+c@{main1.\+c}}
+
+
+Test Program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+image.\+h$>$}\\*
+{\ttfamily \#include $<$S\+D\+L/\+S\+D\+L\+\_\+ttf.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}perso.\+h\char`\"{}}\\*
+Include dependency graph for main1.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main1_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main1_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test Program. 
+
+\begin{DoxyAuthor}{Author}
+dark evil Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+6 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Apr 24, 2021
+\end{DoxyDate}
+Test program for \hyperlink{main1_8c}{main1.\+c} deplacement$\ast$ annimation $\ast$ saut $\ast$ 
+
+\subsection{Function Documentation}
+\index{main1.\+c@{main1.\+c}!main@{main}}
+\index{main@{main}!main1.\+c@{main1.\+c}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{main1_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main1_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 26 of file main1.\+c.
+
+
+
+References personnage\+::acceleration, afficherperso(), animate\+Entity(), blit\+Entity(), personnage\+::d, deplacer\+\_\+perso(), init\+\_\+perso(), personnage\+::mat, move\+Perso(), personnage\+::num, pers, saut(), personnage\+::score, personnage\+::up, and personnage\+::vie.
+
+
+\begin{DoxyCode}
+26                                        \{
+27     SDL\_Surface *ecran=NULL; 
+28      \textcolor{keywordtype}{int}  d; 
+29     \hyperlink{structpersonnage}{personnage} \hyperlink{perso_8h_a9665deb0dbbab88867dd0328603d3f32}{pers}; 
+30     Uint32 dt,t\_prev;
+31 
+32 
+33 
+34 SDL\_Init(SDL\_INIT\_VIDEO);
+35 TTF\_Init(); 
+36 \textcolor{keywordtype}{int} continuer=1;
+37     SDL\_Event evenement; 
+38     
+39     ecran=SDL\_SetVideoMode(600,600,32,SDL\_HWSURFACE); 
+40     
+41 \textcolor{comment}{//creer et stocker des couleurs}
+42 Uint32 red,green,blue, couleurCapeDuPersonnage;
+43 couleurCapeDuPersonnage=SDL\_MapRGB(ecran->format,0,0,128);
+44 red=SDL\_MapRGB(ecran->format,255,0,0);
+45 
+46 green=SDL\_MapRGB(ecran->format,0,255,0);
+47 blue=SDL\_MapRGB(ecran->format,0,0,255);
+48 SDL\_FillRect(ecran,NULL,couleurCapeDuPersonnage);
+49 SDL\_Flip(ecran);
+50 
+51 
+52 \textcolor{comment}{//le personnage}
+53 \hyperlink{perso_8c_a21661aa89318d131d372cdacb5ef82c3}{init\_perso}(&pers);
+54 
+55     
+56 
+57 
+58     
+59 \textcolor{keywordflow}{while}(continuer)\{
+60 
+61 
+62 SDL\_FillRect(ecran,NULL,couleurCapeDuPersonnage);
+63 \hyperlink{perso_8c_a47ed0411b9adbc7543d3e80815cb3401}{afficherperso}(&pers,ecran);
+64 
+65 
+66 
+67 
+68 \hyperlink{perso_8c_ae3c5c8505cfb2638fa312c5cb8e20aa5}{blitEntity}(&pers,ecran);
+69     
+70 SDL\_WaitEvent(&evenement);
+71 t\_prev=SDL\_GetTicks();
+72 
+73 
+74 \textcolor{keywordflow}{if}(evenement.type==SDL\_QUIT)
+75 \{\textcolor{keywordflow}{break};\}    
+76 
+77 \textcolor{keywordflow}{if}(evenement.type==SDL\_KEYDOWN)\{
+78         \textcolor{keywordflow}{if}(evenement.key.keysym.sym==SDLK\_LEFT)\{
+79              d=1;
+80                   pers.\hyperlink{structpersonnage_ad3316ca5e21971af05da3b10b0d18fb3}{d}=1;          
+81 \} 
+82       \textcolor{keywordflow}{else} 
+83         \textcolor{keywordflow}{if} (evenement.key.keysym.sym==SDLK\_RIGHT)\{
+84               d=0; 
+85                
+86                  pers.\hyperlink{structpersonnage_ad3316ca5e21971af05da3b10b0d18fb3}{d}=0;
+87 \} 
+88     \textcolor{keywordflow}{else} 
+89         \textcolor{keywordflow}{if} (evenement.key.keysym.sym==SDLK\_a)\{
+90 
+91               d=2;
+92               pers.\hyperlink{structpersonnage_ad3316ca5e21971af05da3b10b0d18fb3}{d}=2;       
+93 \}
+94  \textcolor{keywordflow}{else} 
+95         \textcolor{keywordflow}{if} (evenement.key.keysym.sym==SDLK\_SPACE)
+96 \{
+97 
+98 pers.\hyperlink{structpersonnage_aa3dc1bee3cdaa742eac0d46f56ac8908}{acceleration}+=0.005;
+99 
+100 \}
+101 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (evenement.key.keysym.sym==SDLK\_d)
+102 \{    
+103 
+104 pers.\hyperlink{structpersonnage_aa3dc1bee3cdaa742eac0d46f56ac8908}{acceleration}-=0.01;
+105 
+106 \}
+107 
+108 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (evenement.key.keysym.sym==SDLK\_UP)
+109 \{
+110 pers.\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][0]=pers.\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[0][1];
+111 pers.\hyperlink{structpersonnage_ad781b14c9d0a4f927e6471b9cf1234df}{up}=1;
+112 \hyperlink{perso_8c_aa512e7feb8c56d184403ca02f0c094a7}{saut}(&pers,dt,200);
+113 
+114  
+115 \}
+116 \textcolor{keywordflow}{if}(d>=0 && d<=1)
+117      \{\hyperlink{perso_8c_ac29231e5ad237f14aa979bd358003dec}{deplacer\_perso}(d,&pers);\}
+118 \hyperlink{perso_8c_aca4de1454b86bed715fb9f30706cd979}{movePerso}(&pers,dt);         
+119 \hyperlink{perso_8c_ab3df315948613e2596ba989c3901ce00}{animateEntity}(&pers);
+120 
+121       
+122 \}
+123 dt=SDL\_GetTicks()-t\_prev;
+124 
+125 
+126 
+127 \}
+128     
+129 
+130 SDL\_Surface *vie;
+131         SDL\_Surface *score;
+132 \textcolor{comment}{//Liberer la memoire}
+133 
+134 SDL\_FreeSurface(pers.\hyperlink{structpersonnage_a3a476ed3aa74ef4eb7ea482739443401}{vie});
+135 SDL\_FreeSurface(pers.\hyperlink{structpersonnage_ad1416e47a9921f214b01e8435d2ea476}{score});
+136 SDL\_FreeSurface(pers.\hyperlink{structpersonnage_a7e7c398ea690ec57a5fce13c80386cd4}{mat}[d][pers.\hyperlink{structpersonnage_acfac32928075716cc10265cfc9f551fc}{num}]);
+137 SDL\_FreeSurface(ecran); 
+138     TTF\_Quit();
+139     SDL\_Quit();  
+140     \textcolor{keywordflow}{return} 0; 
+141     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{main1_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
