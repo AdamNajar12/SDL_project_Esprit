@@ -1,0 +1,100 @@
+# depslib dependency file v1.0
+1614267274 source:/home/azizgar/Documents/game ubuntu/game/main.c
+	"menu.h"
+	"globale.h"
+	"events.h"
+
+1614264439 /home/azizgar/Documents/game ubuntu/game/globale.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_mixer.h>
+	<SDL/SDL_ttf.h>
+	<SDL/SDL_video.h>
+
+1614268738 source:/home/azizgar/Documents/game ubuntu/game/menu.c
+	"menu.h"
+	"globale.h"
+
+1614264639 /home/azizgar/Documents/game ubuntu/game/menu.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<stdlib.h>
+
+1614268089 source:/home/azizgar/Documents/game ubuntu/game/events.c
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<stdlib.h>
+	"events.h"
+	"menu.h"
+	"options.h"
+	"fs.h"
+
+1614265342 /home/azizgar/Documents/game ubuntu/game/events.h
+	"menu.h"
+	"globale.h"
+	"options.h"
+
+1614266871 source:/home/azizgar/Documents/game ubuntu/game/options.c
+	"options.h"
+	"globale.h"
+
+1614266344 /home/azizgar/Documents/game ubuntu/game/options.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<stdlib.h>
+
+1614265949 source:/home/azizgar/Documents/game ubuntu/game/fs.c
+	"fs.h"
+	"globale.h"
+
+1614267398 /home/azizgar/Documents/game ubuntu/game/fs.h
+	"menu.h"
+	"globale.h"
+
+1614265948 source:c:\users\dell\desktop\game\fs.c
+	"fs.h"
+	"globale.h"
+
+1614267398 c:\users\dell\desktop\game\fs.h
+	"menu.h"
+	"globale.h"
+
+1614264638 c:\users\dell\desktop\game\menu.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<stdlib.h>
+
+1614264438 c:\users\dell\desktop\game\globale.h
+	<stdio.h>
+	<stdlib.h>
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<SDL/SDL_mixer.h>
+	<SDL/SDL_ttf.h>
+	<SDL/SDL_video.h>
+
+1614267274 source:c:\users\dell\desktop\game\main.c
+	"menu.h"
+	"globale.h"
+	"events.h"
+
+1614265342 c:\users\dell\desktop\game\events.h
+	"menu.h"
+	"globale.h"
+	"options.h"
+
+1614266344 c:\users\dell\desktop\game\options.h
+	<SDL/SDL.h>
+	<SDL/SDL_image.h>
+	<stdlib.h>
+
+1614268738 source:c:\users\dell\desktop\game\menu.c
+	"menu.h"
+	"globale.h"
+
+1614266870 source:c:\users\dell\desktop\game\options.c
+	"options.h"
+	"globale.h"
+
