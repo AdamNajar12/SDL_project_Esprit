@@ -1,9 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node2" href="$perso_8c.html#a47ed0411b9adbc7543d3e80815cb3401" title="to show the personnage pers . " alt="" coords="111,5,208,32"/>
-<area shape="rect" id="node3" href="$perso_8c.html#ab3df315948613e2596ba989c3901ce00" title="to animate the personnage pers . " alt="" coords="108,56,211,83"/>
-<area shape="rect" id="node4" href="$perso_8c.html#ae3c5c8505cfb2638fa312c5cb8e20aa5" title="to blit the surface of personnage pers . " alt="" coords="123,107,196,133"/>
-<area shape="rect" id="node5" href="$perso_8c.html#ac29231e5ad237f14aa979bd358003dec" title="to move the personnage pers . " alt="" coords="104,157,215,184"/>
-<area shape="rect" id="node6" href="$perso_8c.html#a21661aa89318d131d372cdacb5ef82c3" title="To initialize the perso.c. " alt="" coords="120,208,199,235"/>
-<area shape="rect" id="node7" href="$perso_8c.html#aca4de1454b86bed715fb9f30706cd979" title="to accelerate the personnage pers . " alt="" coords="115,259,203,285"/>
-<area shape="rect" id="node8" href="$perso_8c.html#aa512e7feb8c56d184403ca02f0c094a7" title="jump the personnage pers . " alt="" coords="136,309,183,336"/>
-</map>
